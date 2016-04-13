@@ -1,0 +1,40 @@
+body{
+    background-color: #080808;
+    height: 100%;
+}
+.chat-box{
+    color: limegreen;
+}
+.chat-box input[name="message"]
+{
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 90%;
+}
+span#username{
+    display: inline-block;
+    vertical-align: bottom;
+    width: 8%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+span#message-content{
+    display: inline-block;
+    vertical-align: bottom;
+    width: 90%;
+}
+span#username-separator{
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1%;
+}
+.alert-fixed {
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index:9999;
+    border-radius:0px
+}

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', ['middleware' => 'auth' , function () { return view('welcome');}]);
+Route::get('/', ['middleware' => 'auth' , function () { return view('chat');}]);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'api/v1'],function(){
     Route::group(['prefix' => 'messages'], function(){
