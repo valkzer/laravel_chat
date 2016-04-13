@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', ['middleware' => 'auth' , function () { return view('welcome');}]);
+
+Route::group(['middleware' => 'auth', 'prefix' => 'api/v1'],function(){
+    Route::group(['prefix' => 'messages'], function(){
+        Route::get('{last_message_id}'  , 'APIController@getMessages');
+        Route::post('send'              , 'APIController@sendMessage');
+    });
 });
+
+Route::auth();
