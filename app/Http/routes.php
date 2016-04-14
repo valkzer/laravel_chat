@@ -21,3 +21,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'api/v1'],function(){
 });
 
 Route::auth();
+
+if(env('REGISTER_DISABLED',true)){
+    Route::post('register',function(){
+        return 'Registration not allowed at the moment';
+    });
+}
+
